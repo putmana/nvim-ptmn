@@ -144,10 +144,10 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'EdenEast/nightfox.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'carbonfox'
     end,
   },
 
@@ -158,7 +158,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = true,
-        theme = 'onedark',
+        theme = 'carbonfox',
         component_separators = '|',
         section_separators = '',
       },
@@ -332,7 +332,6 @@ require('nvim-treesitter.configs').setup {
 
   autotag = {
     enable = true,
-    enable_close = true,
   },
 
   highlight = { enable = true },
