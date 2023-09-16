@@ -539,9 +539,16 @@ cmp.setup {
   },
 }
 
-vim.keymap.set('n', '<Down>', '<Nop>')
-vim.keymap.set('n', '<Up>', '<Nop>')
-vim.keymap.set('n', '<Left>', '<Nop>')
-vim.keymap.set('n', '<Right>', '<Nop>')
+vim.keymap.set('n', '<Down>', '<C-w>j')
+vim.keymap.set('n', '<Up>', '<C-w>k')
+vim.keymap.set('n', '<Left>', '<C-w>h')
+vim.keymap.set('n', '<Right>', '<C-w>l')
+
+vim.keymap.set('n', '<S-Down>', '<C-w>s')
+vim.keymap.set('n', '<S-Up>', '<C-w>s')
+vim.keymap.set('n', '<S-Left>', '<C-w>v')
+vim.keymap.set('n', '<S-Right>', '<C-w>v')
+
+vim.wo.relativenumber = true
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
