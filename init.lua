@@ -129,15 +129,23 @@ require('lazy').setup({
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
         vim.keymap.set({ 'n', 'v' }, ']c', function()
-          if vim.wo.diff then return ']c' end
-          vim.schedule(function() gs.next_hunk() end)
+          if vim.wo.diff then
+            return ']c'
+          end
+          vim.schedule(function()
+            gs.next_hunk()
+          end)
           return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+        end, { expr = true, buffer = bufnr, desc = 'Jump to next hunk' })
         vim.keymap.set({ 'n', 'v' }, '[c', function()
-          if vim.wo.diff then return '[c' end
-          vim.schedule(function() gs.prev_hunk() end)
+          if vim.wo.diff then
+            return '[c'
+          end
+          vim.schedule(function()
+            gs.prev_hunk()
+          end)
           return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
+        end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk' })
       end,
     },
   },
@@ -162,17 +170,6 @@ require('lazy').setup({
         component_separators = '|',
         section_separators = '',
       },
-    },
-  },
-
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
     },
   },
 
@@ -326,8 +323,7 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'toml', 'tsx', 'c_sharp', 'javascript', 'typescript',
-    'vimdoc',
-    'vim' },
+    'vimdoc', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,
@@ -456,7 +452,7 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  rust_analyzer = { "rust_analyzer" },
+  rust_analyzer = { 'rust_analyzer' },
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
@@ -490,7 +486,7 @@ mason_lspconfig.setup_handlers {
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
     }
-  end
+  end,
 }
 
 -- [[ Configure nvim-cmp ]]
