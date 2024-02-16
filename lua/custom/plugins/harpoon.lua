@@ -10,25 +10,25 @@ return {
     harpoon:setup()
     -- REQUIRED
 
-    vim.keymap.set('n', '\\h', function()
+    vim.keymap.set('n', '\\`', function()
       harpoon:list():append()
-    end)
-    vim.keymap.set('n', '\\e', function()
+    end, { desc = 'Add position to Harpoon list' })
+    vim.keymap.set('n', '\\\\', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
-    end)
+    end, { desc = 'View Harpoon list' })
 
-    vim.keymap.set('n', '\\a', function()
+    vim.keymap.set('n', '\\1', function()
       harpoon:list():select(1)
-    end)
-    vim.keymap.set('n', '\\s', function()
+    end, { desc = 'Jump to position 1' })
+    vim.keymap.set('n', '\\2', function()
       harpoon:list():select(2)
-    end)
-    vim.keymap.set('n', '\\d', function()
+    end, { desc = 'Jump to position 2' })
+    vim.keymap.set('n', '\\3', function()
       harpoon:list():select(3)
-    end)
-    vim.keymap.set('n', '\\f', function()
+    end, { desc = 'Jump to position 3' })
+    vim.keymap.set('n', '\\4', function()
       harpoon:list():select(4)
-    end)
+    end, { desc = 'Jump to position 4' })
   end,
 
   opts = {},
